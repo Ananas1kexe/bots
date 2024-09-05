@@ -1,0 +1,20 @@
+import disnake
+from disnake.ext import commands
+
+intents = disnake.Intents.default()
+intents.message_content = True
+intents.members = True
+
+bot = commands.Bot(command_prefix="!", intents=intents)
+
+@bot.event
+async def on_ready():
+    print(f"bot {bot.user} ready")
+    
+@bot.event
+async def on_member_join(member):
+    channel = disnake.utils.get(member.guild.text_channels, name="greetings")#or your channel for greetings
+    if channel:
+        await channel.send(f'Привет {member.mention}, рады вас видеть на нащем сервере ')
+
+bot.run('your token')

@@ -1,0 +1,14 @@
+import disnake 
+from disnake.ext import commands
+
+bot = commands.Bot(command_prefix='!')
+@bot.slash_command(description="Ping-Pong")
+async def ping(ctx):
+      await ctx.send('Pong!')
+
+
+@bot.event
+async def on_ready():
+  print('ready')
+
+bot.run('Token')

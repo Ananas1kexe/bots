@@ -16,3 +16,8 @@
 так же вы можете поменять статус бота 
 типо играет в 
 или онлайн не в сети или не активен и тд
+вот пример
+статус не активен
+status=disnake.Status.dnd 
+играет в другое
+activity=disnake.Game("im just discord bot made by ananas1k")
